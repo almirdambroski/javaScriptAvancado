@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+    
+    // 1. A classe PAI (onde fica o que é igual para todos)
+    class Veiculo {
+        constructor(fabricante, modelo, ano) {
+            this.fabricante = fabricante;
+            this.modelo = modelo;
+            this.ano = ano;
+        }
+
+        acelera() {
+            console.log("Acelerando ...");
+        }
+
+        mostrarModelo() {
+            console.log(`A marca é ${this.modelo}`);
+        }
+    }
+
+    // 2. Moto herda de Veiculo
+    class Moto extends Veiculo {
+        constructor(fabricante, modelo, ano, cilindrada) {
+            super(fabricante, modelo, ano); // 'super' passa os dados para o pai
+            this.cilindrada = cilindrada;///esta linha ensina como adicionar uma atributo
+        }
+
+        mostrarDadosMoto() {
+            console.log(`A moto é: ${this.fabricante}, ${this.modelo}, ${this.ano}, ${this.cilindrada} cilindrada`);
+        }
+    }
+
+    // 3. Carro herda de Veiculo e adiciona coisas novas (tipo, portas)
+    class Carro extends Veiculo {
+        constructor(fabricante, modelo, ano, tipo, qtdPortas) {
+            super(fabricante, modelo, ano); // Passa o básico para o pai
+            this.tipo = tipo;
+            this.qtdPortas = qtdPortas;
+        }
+
+        mostrarDadosCarro() {
+            console.log(`${this.fabricante}, ${this.modelo}, ${this.ano}, ${this.tipo}, ${this.qtdPortas} portas`);
+        }
+    }
+
+    // 4. Criando os objetos e testando
+    const meuCarro = new Carro("Ford", "KA", "2000", "Sedan", 4);
+    const meuMoto = new Moto("Yamaha", "K2", "2000", 300);
+
+    meuMoto.mostrarDadosMoto();
+    meuCarro.mostrarDadosCarro();
+    meuCarro.mostrarModelo();
+    meuCarro.acelera();
+
+</script>
+
+        
+
+   
+  </script>
+</body>
+</html>
