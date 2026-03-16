@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    const produtos = [
+      {id: 1, nome:"Camiseta", preço: 25.99},
+      {id: 2, nome:"Tennis", preço: 1.99},
+      {id:3, nome:"Calça", preço: 15.99},
+      ];
+
+      const produtosJson = JSON.stringify(produtos);
+      console.log(produtos);
+      console.log(produtosJson);
+const produtosObj = JSON.parse(produtosJson);
+console.log("De volta para Objeto:", produtosObj);
+
+//Dica assink e await para melhorar seu codigo com DJON
+
+    
+
+  </script>
+</body>
+</html>
