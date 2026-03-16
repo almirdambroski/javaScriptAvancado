@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+    class Carro{ /*toda clas precisa ter um construtor*/
+      constructor(fabricante, modelo,ano,tipo,qtdPortas){
+        
+        this.fabricante = fabricante; //Propriedade da classe
+        this.modelo = modelo; //Propriedade da classe
+        this.ano = ano; //Propriedade da classe
+        this.tipo = tipo;//Propriedade da classe
+        this.qtdPortas = qtdPortas; //Propriedade da classe
+      }
+      mostrarDadosCarro()
+      {
+        console.log(`${this.fabricante}, ${this.modelo}, ${this.ano}, ${this.tipo}, ${this.qtdPortas}portas`);
+      }
+      mostrarModelo()
+      {
+        console.log(`A marca do carro é ${this.modelo}`);
+      }
+      acelera(){
+        console.log("Acelerando ...");
+      }
+    }
+  
+    const meuCarro = new Carro("Ford", "KA", "2000", "Sedan", 4);
+    meuCarro.mostrarDadosCarro();
+    meuCarro.mostrarModelo();
+    meuCarro.acelera();
+
+
+    
+  </script>
+</body>
+</html>
