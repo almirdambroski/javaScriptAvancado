@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+    function alerta()
+    {
+      console.log("Alerta");
+    
+      setTimeout(() => {
+        console.log("Alerta");
+      },3000);
+    setInterval(() => {
+        console.log("Alerta");
+      },3000);
+    }
+    
+//PROMISSE  - 
+function buscaDadosdoServidor(){
+  return new Promise((resolve,reject) =>{
+    console.log("Buscando dados no seridor....");
+    setTimeout(() => {
+      let sucesso = Math.random() > 0.5;
+
+      if(sucesso){
+        resolve("Dados recebidos com sucesso");
+      }else{
+        reject("Falta ao buscar dados ao servidor");
+      }
+    },2000);
+  });
+}
+console.log("Inicio da aexecução");
+
+
+    //CHAMANDO DADOS COM FUNÇÃO ASSINCRONA
+   const minhaFuncaoAssicrona = async () =>{
+    try{
+      const resultado = await buscaDadosdoServidor();
+      console.log(resultado);
+    }catch(erro){
+      console.error("Opss! Errei", Erro);
+
+    }
+  }
+  minhaFuncaoAssicrona();
+
+
+console.log("Final da execução.");
+</script>
+</body>
+</html>
